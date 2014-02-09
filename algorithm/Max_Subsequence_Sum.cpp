@@ -19,7 +19,11 @@ int Max3(int a, int b, int c)
 
 int MaxSubSequence(int a[], int left, int right)
 {
-    if(left == right)   return a[left];
+    if(left == right)   
+	{
+		if(a[left] < 0)	return 0;
+		else	return a[left];
+	}
 
     int center_index = (left+right)/2;
     int Max_Sum_left = MaxSubSequence(a, left, center_index);
